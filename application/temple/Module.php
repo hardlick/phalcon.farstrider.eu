@@ -8,7 +8,7 @@
  * @package temple
  */
 
-namespace farstrider\temple;
+namespace Temple;
 
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
@@ -24,8 +24,8 @@ class Module implements ModuleDefinitionInterface
 		$loader = new Loader();
 		$loader->registerNamespaces(
 				array(
-						'farstrider\temple\controller'	=>	APPLICATION_PATH .'/temple/controllers/',
-						'farstrider\temple\model'		=>	APPLICATION_PATH .'/temple/models/',
+						'Temple\Controllers'	=>	APPLICATION_PATH .'/temple/controllers/',
+						'Temple\Models'		=>	APPLICATION_PATH .'/temple/models/',
 				)
 		);
 		
@@ -38,7 +38,7 @@ class Module implements ModuleDefinitionInterface
 		// Register a dispatcher
 		$di->set('dispatcher', function() use ($di) {
 			$dispatcher = new Dispatcher();
-			$dispatcher->setDefaultNamespace('farstrider\temple\controller');
+			$dispatcher->setDefaultNamespace('Temple\Controllers');
 			$dispatcher->setEventsManager($di->get('eventsManager'));
 			
 			return $dispatcher;

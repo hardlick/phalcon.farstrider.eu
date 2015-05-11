@@ -9,7 +9,7 @@
  * @subpackage controller
  */
 
-namespace farstrider\controller;
+namespace Backend\Controllers;
 
 use Phalcon\Mvc\Controller;
 

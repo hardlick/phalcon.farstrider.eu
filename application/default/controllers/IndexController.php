@@ -10,7 +10,7 @@
  */
 
 // A namespace must always be given or Phalcon complains
-namespace farstrider\controller;
+namespace Backend\Controllers;
 
 use Phalcon\Mvc\Controller;
 

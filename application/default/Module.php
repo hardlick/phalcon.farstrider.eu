@@ -8,7 +8,7 @@
  * @package default
  */
 
-namespace farstrider;
+namespace Backend;
 
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
@@ -24,8 +24,8 @@ class Module implements ModuleDefinitionInterface
 		$loader = new Loader();
 		$loader->registerNamespaces(
 				array(
-						'farstrider\controller'	=>	APPLICATION_PATH .'/default/controllers/',
-						'farstrider\model'		=>	APPLICATION_PATH .'/default/models/',
+						'Backend\Controllers'	=>	APPLICATION_PATH .'/default/controllers/',
+						'Backend\Model'		=>	APPLICATION_PATH .'/default/models/',
 				)
 		);
 		
@@ -38,7 +38,7 @@ class Module implements ModuleDefinitionInterface
 		// Register a dispatcher
 		$di->set('dispatcher', function() use ($di) {
 			$dispatcher = new Dispatcher();
-			$dispatcher->setDefaultNamespace('farstrider\controller');
+			$dispatcher->setDefaultNamespace('Backend\Controllers');
 			$dispatcher->setEventsManager($di->get('eventsManager'));
 			
 			return $dispatcher;

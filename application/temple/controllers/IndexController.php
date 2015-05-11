@@ -9,7 +9,8 @@
  * @subpackage controller
  */
 
-namespace farstrider\temple\controller;
+
+namespace Temple\Controllers;
 
 use Phalcon\Mvc\Controller;
 
